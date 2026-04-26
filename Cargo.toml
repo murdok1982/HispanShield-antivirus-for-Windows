@@ -1,0 +1,23 @@
+[workspace]
+members = [
+    "agent",
+    "ui/src-tauri",
+]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["HispanShield Team"]
+license = "GPL-3.0"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+strip = true
+panic = "abort"
+
+[profile.dev]
+opt-level = 0
+debug = true

@@ -1,0 +1,117 @@
+{
+  "version": "1.0",
+  "updated": "2026-04-26",
+  "feeds": [
+    {
+      "id": "malwarebazaar",
+      "name": "MalwareBazaar Full Dump",
+      "provider": "abuse.ch",
+      "url": "https://bazaar.abuse.ch/export/csv/full/",
+      "type": "MalwareBazaar",
+      "format": "csv",
+      "enabled": true,
+      "ttl_hours": 24,
+      "ioc_types": ["sha256", "sha1", "md5"],
+      "description": "Full database of malware samples with SHA-256, SHA-1 and MD5 hashes"
+    },
+    {
+      "id": "threatfox",
+      "name": "ThreatFox IOC Database",
+      "provider": "abuse.ch",
+      "url": "https://threatfox.abuse.ch/export/csv/full/",
+      "type": "ThreatFox",
+      "format": "csv",
+      "enabled": true,
+      "ttl_hours": 12,
+      "ioc_types": ["ip", "domain", "url", "md5", "sha256"],
+      "description": "Indicators of Compromise from ThreatFox (C2, botnets, malware families)"
+    },
+    {
+      "id": "urlhaus",
+      "name": "URLhaus Malicious URLs",
+      "provider": "abuse.ch",
+      "url": "https://urlhaus.abuse.ch/downloads/csv/",
+      "type": "UrlHaus",
+      "format": "csv",
+      "enabled": true,
+      "ttl_hours": 6,
+      "ioc_types": ["url", "domain"],
+      "description": "Database of URLs used to distribute malware"
+    },
+    {
+      "id": "feodotracker_ips",
+      "name": "Feodo Tracker C2 IPs",
+      "provider": "abuse.ch",
+      "url": "https://feodotracker.abuse.ch/downloads/ipblocklist_recommended.txt",
+      "type": "FeodoTracker",
+      "format": "txt",
+      "enabled": true,
+      "ttl_hours": 6,
+      "ioc_types": ["ip"],
+      "description": "C2 server IPs for Emotet, Dridex, TrickBot, QakBot, BazarLoader"
+    },
+    {
+      "id": "feodotracker_domains",
+      "name": "Feodo Tracker C2 Domains",
+      "provider": "abuse.ch",
+      "url": "https://feodotracker.abuse.ch/downloads/domainblocklist.txt",
+      "type": "FeodoTracker",
+      "format": "txt",
+      "enabled": true,
+      "ttl_hours": 6,
+      "ioc_types": ["domain"],
+      "description": "C2 domains for banking trojans and ransomware"
+    },
+    {
+      "id": "sslbl",
+      "name": "SSL Blacklist (IPs)",
+      "provider": "abuse.ch",
+      "url": "https://sslbl.abuse.ch/blacklist/sslipbl.csv",
+      "type": "SslBlacklist",
+      "format": "csv",
+      "enabled": true,
+      "ttl_hours": 12,
+      "ioc_types": ["ip"],
+      "description": "IPs associated with malicious SSL certificates (C2 traffic)"
+    },
+    {
+      "id": "misp_alexa",
+      "name": "MISP Warninglist — Alexa Top 1M",
+      "provider": "MISP Project",
+      "url": "https://raw.githubusercontent.com/MISP/misp-warninglists/main/lists/alexa/list.json",
+      "type": "MispWarninglist",
+      "format": "json",
+      "enabled": true,
+      "ttl_hours": 168,
+      "ioc_types": ["domain"],
+      "is_allowlist": true,
+      "description": "Popular domains — reduces false positives on legitimate traffic"
+    },
+    {
+      "id": "misp_microsoft",
+      "name": "MISP Warninglist — Microsoft",
+      "provider": "MISP Project",
+      "url": "https://raw.githubusercontent.com/MISP/misp-warninglists/main/lists/microsoft/list.json",
+      "type": "MispWarninglist",
+      "format": "json",
+      "enabled": true,
+      "ttl_hours": 168,
+      "ioc_types": ["domain", "ip"],
+      "is_allowlist": true,
+      "description": "Microsoft IPs and domains — prevents blocking Windows Update and Office 365"
+    },
+    {
+      "id": "misp_google",
+      "name": "MISP Warninglist — Google",
+      "provider": "MISP Project",
+      "url": "https://raw.githubusercontent.com/MISP/misp-warninglists/main/lists/google/list.json",
+      "type": "MispWarninglist",
+      "format": "json",
+      "enabled": true,
+      "ttl_hours": 168,
+      "ioc_types": ["domain", "ip"],
+      "is_allowlist": true,
+      "description": "Google IPs and domains allowlist"
+    }
+  ]
+}

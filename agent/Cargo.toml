@@ -1,0 +1,72 @@
+[package]
+name = "hispanshield-agent"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "hispanshield-agent"
+path = "src/main.rs"
+
+[dependencies]
+# Async runtime
+tokio = { version = "1", features = ["full"] }
+# Windows Service
+windows-service = "0.7"
+# Windows APIs
+windows = { version = "0.58", features = [
+    "Win32_Foundation",
+    "Win32_System_Threading",
+    "Win32_System_Diagnostics_ToolHelp",
+    "Win32_NetworkManagement_IpHelper",
+    "Win32_System_Registry",
+    "Win32_Storage_FileSystem",
+    "Win32_Security",
+    "Win32_System_Services",
+    "Win32_System_IO",
+    "Win32_NetworkManagement_Ndis",
+    "Win32_System_EventLog",
+] }
+# SQLite
+rusqlite = { version = "0.31", features = ["bundled"] }
+# Serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+# Logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+tracing-appender = "0.2"
+# Error handling
+anyhow = "1"
+thiserror = "1"
+# Crypto (hash)
+sha2 = "0.10"
+sha1 = "0.10"
+md-5 = "0.10"
+hmac = "0.12"
+# HTTP for feeds
+reqwest = { version = "0.12", features = ["json", "rustls-tls"], default-features = false }
+# UUID
+uuid = { version = "1", features = ["v4"] }
+# Time
+chrono = { version = "0.4", features = ["serde"] }
+# Config
+toml = "0.8"
+# Pattern matching / regex
+regex = "1"
+# Async channels
+tokio-util = "0.7"
+# File notification
+notify = "6"
+# YARA
+yara = "0.28"
+# CSV parsing for feeds
+csv = "1"
+
+[features]
+default = []
+dns-monitor = []
+
+[build-dependencies]
+winres = "0.1"

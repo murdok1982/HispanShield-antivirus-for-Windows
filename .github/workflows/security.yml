@@ -1,0 +1,49 @@
+name: Security Audit
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"   # Lunes a las 6:00 UTC
+  push:
+    paths:
+      - "**/Cargo.toml"
+      - "**/Cargo.lock"
+      - "**/package.json"
+      - "**/package-lock.json"
+
+jobs:
+  rust-audit:
+    name: Rust Dependency Audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install cargo-audit
+        run: cargo install cargo-audit --locked
+      - name: Run audit
+        run: cargo audit --deny warnings
+
+  node-audit:
+    name: Node.js Dependency Audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Install deps
+        working-directory: ui
+        run: npm ci
+      - name: Run audit
+        working-directory: ui
+        run: npm audit --audit-level=moderate
+
+  yara-validate:
+    name: Validate YARA Rules
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install YARA
+        run: sudo apt-get install -y yara
+      - name: Compile all YARA rules
+        run: |
+          find rules/ -name "*.yar" -exec yarac {} /tmp/compiled_{}.yarac \;
+          echo "All YARA rules compiled successfully"

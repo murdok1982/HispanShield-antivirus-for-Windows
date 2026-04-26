@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-surface-600;
+  }
+  body {
+    @apply bg-surface-900 text-gray-100 font-sans antialiased;
+  }
+  ::-webkit-scrollbar {
+    @apply w-1.5;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-surface-800;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-surface-500 rounded-full;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-surface-800 border border-surface-600 rounded-xl p-5;
+  }
+  .btn-primary {
+    @apply bg-shield-600 hover:bg-shield-500 text-white px-4 py-2 rounded-lg font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-danger {
+    @apply bg-threat-critical hover:bg-red-600 text-white px-4 py-2 rounded-lg font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-ghost {
+    @apply text-gray-400 hover:text-gray-200 hover:bg-surface-700 px-3 py-2 rounded-lg transition-colors;
+  }
+  .btn-outline {
+    @apply border border-surface-500 text-gray-300 hover:bg-surface-700 px-4 py-2 rounded-lg font-medium transition-colors;
+  }
+  .badge-clean {
+    @apply bg-threat-clean/20 text-threat-clean text-xs px-2 py-0.5 rounded-full font-medium;
+  }
+  .badge-low {
+    @apply bg-threat-low/20 text-threat-low text-xs px-2 py-0.5 rounded-full font-medium;
+  }
+  .badge-medium {
+    @apply bg-threat-medium/20 text-threat-medium text-xs px-2 py-0.5 rounded-full font-medium;
+  }
+  .badge-high {
+    @apply bg-threat-high/20 text-threat-high text-xs px-2 py-0.5 rounded-full font-medium;
+  }
+  .badge-critical {
+    @apply bg-threat-critical/20 text-threat-critical text-xs px-2 py-0.5 rounded-full font-medium;
+  }
+  .table-row-hover {
+    @apply hover:bg-surface-700/50 transition-colors cursor-default;
+  }
+  .input-field {
+    @apply bg-surface-700 border border-surface-500 text-gray-100 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-shield-500 focus:ring-1 focus:ring-shield-500 placeholder:text-gray-500;
+  }
+  .select-field {
+    @apply bg-surface-700 border border-surface-500 text-gray-100 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-shield-500;
+  }
+}

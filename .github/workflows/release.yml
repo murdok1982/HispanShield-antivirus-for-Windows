@@ -1,0 +1,78 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+permissions:
+  contents: write
+
+jobs:
+  build-release:
+    name: Build Release
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Get version from tag
+        id: version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_ENV
+        shell: bash
+
+      - name: Install Rust stable
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: x86_64-pc-windows-msvc
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install YARA
+        run: choco install yara -y --no-progress
+        shell: powershell
+
+      - name: Cache cargo
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            target/
+            ui/src-tauri/target/
+          key: ${{ runner.os }}-cargo-release-${{ hashFiles('**/Cargo.lock') }}
+
+      - name: Build agent
+        run: cargo build --release -p hispanshield-agent
+
+      - name: Install UI deps and build
+        working-directory: ui
+        run: |
+          npm ci
+          npm run tauri build
+        env:
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
+
+      - name: Create Release
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: |
+            target/release/hispanshield-agent.exe
+            ui/src-tauri/target/release/bundle/msi/*.msi
+            ui/src-tauri/target/release/hispanshield-ui.exe
+          generateReleaseNotes: true
+          draft: false
+          prerelease: ${{ contains(github.ref, 'alpha') || contains(github.ref, 'beta') || contains(github.ref, 'rc') }}
+          body: |
+            ## HispanShield Antivirus ${{ env.VERSION }}
+
+            ### Instalación
+            1. Descarga `HispanShield_${{ env.VERSION }}_x64.msi`
+            2. Ejecuta el instalador como Administrador
+            3. El servicio se iniciará automáticamente
+
+            ### Build manual
+            Ver [docs/build-and-install.md](docs/build-and-install.md)
