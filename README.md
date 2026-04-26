@@ -26,7 +26,7 @@
 - [🚀 Instalación y Uso](#-instalación-y-uso)
 - [📡 Feeds de Threat Intelligence](#-feeds-de-threat-intelligence)
 - [🤝 Cómo Contribuir](#-cómo-contribuir)
-- [☕ Apoya este Proyecto (Donaciones)](#-apoya-este-proyecto-donaciones)
+- [💰 Apoya mi trabajo de código abierto](#-apoya-mi-trabajo-de-código-abierto)
 - [📄 Licencia](#-licencia)
 
 ---
@@ -206,22 +206,22 @@ Por favor, revisa [CONTRIBUTING.md](CONTRIBUTING.md) para más detalles. Si encu
 
 ---
 
-## ☕ Apoya este Proyecto (Donaciones)
+## 💰 Apoya mi trabajo de código abierto
 
-Este proyecto ha requerido cientos de horas de diseño de arquitectura, ingeniería en Rust e investigación en inteligencia de amenazas. El código es completamente abierto, pero mantener los servidores, las integraciones y mi trabajo continuo requiere esfuerzo.
+Bitcoin
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃  ₿  Bitcoin Donation Address  ₿   ┃
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+┃                                   ┃
+┃   bc1qqphwht25vjzlptwzjyjt3sex    ┃
+┃   7e3p8twn390fkw                  ┃
+┃                                   ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+Rojo: Bitcoin (BTC)
+Dirección: bc1qqphwht25vjzlptwzjyjt3sex7e3p8twn390fkw
 
-Si HispanShield te parece útil, te ayuda a proteger tus equipos o te inspira a aprender:
-
-<div align="center">
-  <a href="https://paypal.me/murdok1982">
-    <img src="https://img.shields.io/badge/Donar_vía-PayPal-blue?style=for-the-badge&logo=paypal" alt="Donar por PayPal">
-  </a>
-  <a href="https://github.com/sponsors/murdok1982">
-    <img src="https://img.shields.io/badge/Sponsor_en-GitHub-ea4aaa?style=for-the-badge&logo=github" alt="Sponsor on GitHub">
-  </a>
-</div>
-
-**¡Cada contribución asegura que esta herramienta siga siendo libre, privada y actualizada!**
+Escanee el código QR (o copie la dirección).
+¡Vuestro apoyo me ayuda a dedicar más tiempo al desarrollo de código abierto! 🙏
 
 ---
 
