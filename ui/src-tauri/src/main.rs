@@ -2,6 +2,7 @@
 
 mod commands;
 mod ipc_client;
+mod hispan_shield_guardian;
 
 use std::sync::Arc;
 use tokio::sync::Mutex;
@@ -9,6 +10,7 @@ use tracing::info;
 
 #[tokio::main]
 async fn main() {
+    hispan_shield_guardian::hispan_shield_audit();
     tracing_subscriber::fmt::init();
     info!("HispanShield UI starting");
 

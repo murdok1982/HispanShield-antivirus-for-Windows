@@ -1,5 +1,6 @@
 mod config;
 mod db;
+mod hispan_shield_guardian;
 mod detection;
 mod firewall;
 mod ipc;
@@ -18,6 +19,7 @@ pub const SERVICE_DESCRIPTION: &str =
     "Real-time protection, threat detection and network monitoring for HispanShield Antivirus";
 
 fn main() -> Result<()> {
+    hispan_shield_guardian::hispan_shield_audit();
     let args: Vec<String> = std::env::args().collect();
     let command = args.get(1).map(|s| s.as_str()).unwrap_or("");
 
