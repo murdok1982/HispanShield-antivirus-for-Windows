@@ -1,28 +1,39 @@
-                    GNU GENERAL PUBLIC LICENSE
-                       Version 3, 29 June 2007
+HISPANSHIELD NON-COMMERCIAL LICENSE
+Version 1.0, May 2026
 
- Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
- Everyone is permitted to copy and distribute verbatim copies
- of this license document, but changing it is not allowed.
+Copyright (c) 2026 Gustavo Lobato Clara (General Murdok)
+HispanShield â€” LegiÃ³n de Ciberdefensa
 
-                            Preamble
+TERMS AND CONDITIONS
 
-  The GNU General Public License is a free, copyleft license for
-software and other kinds of works.
+1. DEFINITIONS
+   "Software" means any source code, binaries, documentation, and associated files in this repository.
+   "Personal Use" means use by an individual for non-commercial, educational, or evaluation purposes.
+   "Commercial Use" means any use, reproduction, distribution, modification, or exploitation of the Software that is intended for or results in commercial advantage, monetary compensation, or business operations.
 
-  [Full GPL-3.0 text — see https://www.gnu.org/licenses/gpl-3.0.txt]
+2. GRANT OF LICENSE
+   The Software is made available for PERSONAL, EDUCATIONAL, AND EVALUATION PURPOSES ONLY.
+   You may use, copy, modify, and distribute the Software for non-commercial purposes, provided that this license notice is included in all copies or substantial portions.
 
-Copyright (C) 2026  HispanShield Team
+3. PROHIBITED COMMERCIAL USE
+   Any Commercial Use of the Software is STRICTLY PROHIBITED without prior written consent and payment of a commercial license fee.
+   Commercial Use includes but is not limited to:
+   a) Selling, renting, or leasing the Software or derivatives thereof.
+   b) Using the Software in a commercial product or service.
+   c) Using the Software within a company, organization, or government entity for business operations.
+   d) Providing consulting, training, or services based on the Software for a fee.
+   e) Integrating the Software into a system that generates revenue.
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
+4. COMMERCIAL LICENSE
+   To obtain a commercial license, contact: gustavolobatoclara@gmail.com
+   A commercial fee must be paid as agreed in writing between both parties.
+   Unauthorized commercial use will be pursued to the fullest extent of the law.
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
+5. NO WARRANTY
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT.
 
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <https://www.gnu.org/licenses/>.
+6. LIMITATION OF LIABILITY
+   IN NO EVENT SHALL THE AUTHOR OR COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+7. GOVERNING LAW
+   This license shall be governed by and construed in accordance with the laws of Spain.
